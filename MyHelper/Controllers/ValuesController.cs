@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Security.BasiAuthentication;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -17,6 +18,7 @@ namespace MyHelper.Controllers
         }
 
         // GET api/values/5
+        [BasicAuthentication]
         public string Get(int id)
         {
             return "value";

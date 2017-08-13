@@ -48,6 +48,9 @@ namespace MyHelper.Models
         [Display(Name = "Kennwort bestätigen")]
         [Compare("Password", ErrorMessage = "Das Kennwort stimmt nicht mit dem Bestätigungskennwort überein.")]
         public string ConfirmPassword { get; set; }
+
+        [Display(Name = "Name")]
+        public string Name { get; set; }
     }
 
     public class RegisterExternalBindingModel

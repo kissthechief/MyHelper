@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Web.Http;
 using Microsoft.Owin.Security.OAuth;
 using Newtonsoft.Json.Serialization;
+using Unity.WebApi;
 
 namespace MyHelper
 {
@@ -25,6 +26,9 @@ namespace MyHelper
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            var container = UnityConfig.RegisterComponents();
+            config.DependencyResolver = new UnityDependencyResolver(container);           
         }
     }
 }
